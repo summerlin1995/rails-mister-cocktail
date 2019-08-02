@@ -1,0 +1,35 @@
+<h1>Show the Cocktail</h1>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @cocktail.name %>
+</p>
+
+<!-- <p>
+  <strong>Ingredient:</strong>
+  <%# @ingredients.each do |i| %>
+    <%#= i.name %>
+  <%# end %>
+</p> -->
+
+<p>
+  <strong>Does:</strong>
+  <% @cocktail.doses.each do |dose| %> <!-- how to show dose? -->
+    <p><%= dose.description %> | <%= dose.ingredient.name %></p>
+  <% end %>
+</p>
+
+
+<%= link_to 'Back', cocktails_path %>
+<%= link_to 'Add Dose',  new_cocktail_dose_path(@cocktail) %>
+
+
+
+
+
+<!-- A user can see the details of a given cocktail,
+with the dose needed for each ingredient
+GET "cocktails/42" -->
+
